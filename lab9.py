@@ -4,12 +4,9 @@ import unittest
 class KthLargestFinder:
     def solve_finder(self, numbers: list[int], k: int) -> int:
         unique_numbers = set(numbers)
-
         if k <= 0 or len(unique_numbers) < k:
             return -1
-
         min_heap = []
-
         for num in unique_numbers:
             if len(min_heap) < k:
                 heapq.heappush(min_heap, num)
